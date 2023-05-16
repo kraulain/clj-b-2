@@ -9,3 +9,11 @@
      (csv/read-csv csv))))
 
 
+;;Extract volcano records into a clojure map
+(def volcano-records
+  (let [csv-lines (rest csv-lines)
+        header-line (first csv-lines)
+        volcano-lines (rest csv-lines)]
+    (map (fn [volcano-line]
+           (zipmap header-line volcano-line))
+         volcano-lines)))
