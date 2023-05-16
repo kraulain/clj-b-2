@@ -27,7 +27,7 @@
   (map transform-header header-row))
 
 
-;;Extract volcano records into a clojure map
+;;Volcano records into a clojure map
 (def volcano-records
   (let [csv-lines (rest csv-lines)
         header-line (transform-header-row (first csv-lines))
@@ -37,5 +37,19 @@
          volcano-lines)))
 
 
-;;Extract all volcano types
+;;All volcano types
 (def types (set (map :primary-volcano-type volcano-records)))
+
+
+(defn parse-numbers
+  "Parse numeric string values to numbers"
+  [volcano]
+  (-> volcano
+      (update :elevation-meters #(Integer/parseInt %))
+      (update :longitude #(Double/parseDouble %))
+      (update :latitude #(Double/parseDouble %))))
+
+
+;;All volcano records with numeric values parsed
+(def volcanoes-parsed
+  (map parse-numbers volcano-records))
