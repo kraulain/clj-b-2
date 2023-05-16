@@ -37,3 +37,5 @@
          volcano-lines)))
 
 
+;;Extract all volcano types
+(def types (set (map :primary-volcano-type volcano-records)))
