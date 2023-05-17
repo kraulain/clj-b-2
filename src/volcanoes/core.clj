@@ -53,3 +53,14 @@
 ;;All volcano records with numeric values parsed
 (def volcanoes-parsed
   (map parse-numbers volcano-records))
+
+
+(comment
+
+  (let [volcano (nth volcanoes-parsed 10)]
+    (clojure.pprint/pprint volcano))
+
+  (let [volcano (first (filter #(= "221291" (:volcano-number %)) volcanoes-parsed))]
+    (clojure.pprint/pprint volcano))
+
+)
