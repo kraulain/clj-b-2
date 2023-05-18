@@ -55,6 +55,7 @@
   (map parse-numbers volcano-records))
 
 
+;; comment bloc to quickly try out things but store in the codebase for reuse
 (comment
 
   (let [volcano (nth volcanoes-parsed 10)]
@@ -63,4 +64,4 @@
   (let [volcano (first (filter #(= "221291" (:volcano-number %)) volcanoes-parsed))]
     (clojure.pprint/pprint volcano))
 
-)
+  )
