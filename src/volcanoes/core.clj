@@ -62,8 +62,9 @@
   (let [volcano (nth volcanoes-parsed 10)]
     (clojure.pprint/pprint volcano))
 
+
   ;;binding to easily filter a volcano by its number
   (let [volcano (first (filter #(= "221291" (:volcano-number %)) volcanoes-parsed))]
     (clojure.pprint/pprint volcano))
 
-  )
+)
