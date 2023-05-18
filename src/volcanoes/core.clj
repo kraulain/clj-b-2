@@ -58,6 +58,7 @@
 ;; comment bloc to quickly try out things but store in the codebase for reuse
 (comment
 
+  ;;binding to easily pick a specific volcano
   (let [volcano (nth volcanoes-parsed 10)]
     (clojure.pprint/pprint volcano))
 
